@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Загрузка файла с телефонами</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Загрузите текстовый файл с телефонами</h2>
+        <form action="/extract-phones/" enctype="multipart/form-data" method="post" class="upload-form">
+            <input name="file" type="file" required />
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
