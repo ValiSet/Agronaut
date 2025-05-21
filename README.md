@@ -14,10 +14,14 @@
 │ ├── static/ # CSS и другие статические файлы
 │ └── templates/ # HTML-шаблоны (форма загрузки)
 │
-├── Dockerfile # Docker-образ
+├── assets/
+│   └── img.png              # Скриншот формы
+│
+├── Dockerfile # Docker-образ (backend)
 ├── docker-compose.yml # docker-compose (backend + nginx)
 ├── nginx/
-│ └── default.conf # Конфигурация nginx
+| ├── Dockerfile # Docker-образ (nginx)
+│ └── nginx.conf # Конфигурация nginx
 ├── pyproject.toml # Зависимости проекта
 ├── uv.lock # Файл зависимостей uv
 ├── .python-version # Версия Python (например, 3.11)
@@ -55,24 +59,24 @@ docker-compose up --build
 ---
 
 ## 📡 API
+```bash
 POST /extract-phones/
+```
 
 Формат запроса: multipart/form-data с полем file
 
-Формат ответа:
-
-json
-
+Формат ответа json:
+```bash
 {
   "phones": ["+7(999)123-45-67", "+7(495)765-43-21"]
 }
+```
 Если номера не найдены:
-
-json
-
+```bash
 {
   "message": "Телефонные номера не найдены."
 }
+```
 
 ---
 
@@ -86,10 +90,12 @@ json
 ---
 
 ## 💻 Пример содержимого файла
-text
-
+```bash
 Позвоните нам по номеру: +7 (495) 123-45-67
 или по короткому: 8-800-200-00-00
+```
+
+---
 
 ## 🖼️ Интерфейс
 

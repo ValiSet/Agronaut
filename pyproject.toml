@@ -6,4 +6,11 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.12",
+    "jinja2>=3.1.6",
+    "loguru>=0.7.3",
+    "pre-commit>=4.2.0",
+    "pydantic>=2.11.4",
+    "python-multipart>=0.0.20",
+    "ruff>=0.11.10",
+    "uvicorn[standard]>=0.34.2",
 ]
